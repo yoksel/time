@@ -27,17 +27,17 @@ $item: item--1;
 				border-color: $color transparent;
 				}
 		}
-		@else {
-			&:before,
-			&:after {
+	}	
+	@if $dir == both {
+			.item--h:before,
+			.item--h:after {
 				border-color: transparent $color;
 				}
-			&:before,
-			&:after {
+			.item--v:before,
+			.item--v:after {
 				border-color: $color transparent;
 				}
 		}
-	}	
 }
 
 BODY {

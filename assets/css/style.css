@@ -77,10 +77,14 @@ LI {
 .item {
   background: #222222;
 }
-.item:before, .item:after {
+
+.item--h:before,
+.item--h:after {
   border-color: transparent #222222;
 }
-.item:before, .item:after {
+
+.item--v:before,
+.item--v:after {
   border-color: #222222 transparent;
 }
 
