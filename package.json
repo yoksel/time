@@ -1,0 +1,23 @@
+{
+  "name": "time",
+  "version": "0.0.0",
+  "description": "Funny watches with Css and Js",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yoksel",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-autoprefixer": "~0.6.4",
+    "grunt-csso": "~0.5.3",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.6.0"
+  },
+  "dependencies": {
+    "grunt-open": "~0.2.2"
+  }
+}

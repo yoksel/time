@@ -1,0 +1,119 @@
+/* Mixins */
+
+$item-short: 1em;
+$item-long: 10em;
+$item-space: .2em;
+$item-body: $item-long - $item-short * 2 - $item-space * 2;
+$item-margin: $item-short + $item-space;
+$item-margin-small: $item-margin / 2;
+
+$item-color-off: #222;
+$item-color-on: crimson;
+
+$item: item--1;
+
+@mixin digit-coloring ($color, $parent, $dir) {
+	.#{$parent} {
+		background: $color;
+		@if $dir == h {
+			&:before,
+			&:after {
+				border-color: transparent $color;
+				}
+		} 
+		@else if $dir == v {
+			&:before,
+			&:after {
+				border-color: $color transparent;
+				}
+		}
+		@else {
+			&:before,
+			&:after {
+				border-color: transparent $color;
+				}
+			&:before,
+			&:after {
+				border-color: $color transparent;
+				}
+		}
+	}	
+}
+
+BODY {
+	background: black;
+	font-family: "Arial Unicode MS";
+	font-size: 70%;
+	}
+UL {
+	padding: 0;
+	margin: 0;
+	}
+	LI {
+		list-style: none ;
+		}
+.wrapper {
+	/*border: 1px solid silver;*/
+	}	
+/* Digit
+----------------------------------- */
+.digit {
+	display: inline-block;
+	width: 10em;
+	height: 20em;
+	border: 1px solid;
+	}	
+	.item {
+		position: relative;
+		&:before,
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border: .5em solid transparent;
+			}
+		}
+		.item--h {
+			clear: both;
+			width: $item-body;
+			height: $item-short;
+			margin: 0 $item-margin;
+			&:before {
+				left: -.5em;
+				border-left: 0;
+				}
+			&:after {
+				right: -.5em;
+				border-right: 0;
+				}	
+			}	
+		.item--v {
+			float: left;
+			width: $item-short;
+			height: $item-body;
+			margin: $item-space 0;
+			&:before {
+				top: -.5em;
+				border-top: 0;
+				}
+			&:after {
+				bottom: -.5em;
+				border-bottom: 0;
+				}
+			}
+			.item--2,
+			.item--6 {
+				float: right;
+				}
+	@include digit-coloring ($item-color-off, item, both);	
+					
+/* Digit Coloring
+----------------------------------- */
+.digit--1 {
+	@include digit-coloring ($item-color-on, item--1, h);	
+	@include digit-coloring ($item-color-on, item--2, v);	
+}
+
+

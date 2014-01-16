@@ -1,0 +1,100 @@
+/* Mixins */
+BODY {
+  background: black;
+  font-family: "Arial Unicode MS";
+  font-size: 70%;
+}
+
+UL {
+  padding: 0;
+  margin: 0;
+}
+
+LI {
+  list-style: none;
+}
+
+.wrapper {
+  /*border: 1px solid silver;*/
+}
+
+/* Digit
+----------------------------------- */
+.digit {
+  display: inline-block;
+  width: 10em;
+  height: 20em;
+  border: 1px solid;
+}
+
+.item {
+  position: relative;
+}
+.item:before, .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: .5em solid transparent;
+}
+
+.item--h {
+  clear: both;
+  width: 7.6em;
+  height: 1em;
+  margin: 0 1.2em;
+}
+.item--h:before {
+  left: -.5em;
+  border-left: 0;
+}
+.item--h:after {
+  right: -.5em;
+  border-right: 0;
+}
+
+.item--v {
+  float: left;
+  width: 1em;
+  height: 7.6em;
+  margin: 0.2em 0;
+}
+.item--v:before {
+  top: -.5em;
+  border-top: 0;
+}
+.item--v:after {
+  bottom: -.5em;
+  border-bottom: 0;
+}
+
+.item--2,
+.item--6 {
+  float: right;
+}
+
+.item {
+  background: #222222;
+}
+.item:before, .item:after {
+  border-color: transparent #222222;
+}
+.item:before, .item:after {
+  border-color: #222222 transparent;
+}
+
+/* Digit Coloring
+----------------------------------- */
+.digit--1 .item--1 {
+  background: crimson;
+}
+.digit--1 .item--1:before, .digit--1 .item--1:after {
+  border-color: transparent crimson;
+}
+.digit--1 .item--2 {
+  background: crimson;
+}
+.digit--1 .item--2:before, .digit--1 .item--2:after {
+  border-color: crimson transparent;
+}
