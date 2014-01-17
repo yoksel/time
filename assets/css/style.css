@@ -7,7 +7,7 @@ HTML, BODY {
 
 BODY {
   background: black;
-  font-family: "Arial Unicode MS";
+  font-family: Arial;
   font-size: 8px;
 }
 
@@ -22,17 +22,17 @@ LI {
 
 .wrapper {
   position: absolute;
-  top: -12.5em;
-  bottom: -12.5em;
+  top: -7.5em;
+  bottom: -7.5em;
   margin: auto;
   width: 100%;
-  height: 25em;
+  height: 15em;
   text-align: center;
 }
 .wrapper:before {
   content: "";
   display: inline-block;
-  height: 25em;
+  height: 15em;
   width: 20px;
   vertical-align: middle;
 }
@@ -49,7 +49,7 @@ LI {
   display: block;
   width: 2em;
   height: 2em;
-  background: olive;
+  background: teal;
   border-radius: .2em;
 }
 .dottes:before {
@@ -60,7 +60,7 @@ LI {
 ----------------------------------- */
 .digit {
   display: inline-block;
-  width: 10em;
+  width: 8em;
   margin: 0 1em;
   vertical-align: middle;
 }
@@ -87,7 +87,7 @@ LI {
 
 .item--h {
   clear: both;
-  width: 5em;
+  width: 3em;
   height: 2em;
   margin: 0 auto;
 }
@@ -105,8 +105,8 @@ LI {
 }
 
 .item--4 {
-  width: 5em;
-  margin: 6em auto 0;
+  width: 3em;
+  margin: 4em auto 0;
 }
 .item--4:before {
   left: -1em;
@@ -136,7 +136,7 @@ LI {
 .item--v {
   float: left;
   width: 2em;
-  height: 5em;
+  height: 3em;
   margin: 0.5em 0;
 }
 .item--v:before {
@@ -197,72 +197,23 @@ LI {
 
 /* Digit Coloring
 ----------------------------------- */
-.js-digit--0 .item--1, .js-digit--0 .item--2, .js-digit--0 .item--3, .js-digit--0 .item--5, .js-digit--0 .item--6, .js-digit--0 .item--7 {
-  background: olive;
+.js-color--orange {
+  background: orange;
 }
-.js-digit--0 .item--1:before, .js-digit--0 .item--1:after, .js-digit--0 .item--2:before, .js-digit--0 .item--2:after, .js-digit--0 .item--3:before, .js-digit--0 .item--3:after, .js-digit--0 .item--5:before, .js-digit--0 .item--5:after, .js-digit--0 .item--6:before, .js-digit--0 .item--6:after, .js-digit--0 .item--7:before, .js-digit--0 .item--7:after {
-  border-color: olive;
-}
-
-.js-digit--1 .item--3, .js-digit--1 .item--6 {
-  background: olive;
-}
-.js-digit--1 .item--3:before, .js-digit--1 .item--3:after, .js-digit--1 .item--6:before, .js-digit--1 .item--6:after {
-  border-color: olive;
+.js-color--orange:before, .js-color--orange:after {
+  border-color: orange;
 }
 
-.js-digit--2 .item--1, .js-digit--2 .item--3, .js-digit--2 .item--4, .js-digit--2 .item--5, .js-digit--2 .item--7 {
-  background: olive;
+.js-color--crimson {
+  background: crimson;
 }
-.js-digit--2 .item--1:before, .js-digit--2 .item--1:after, .js-digit--2 .item--3:before, .js-digit--2 .item--3:after, .js-digit--2 .item--4:before, .js-digit--2 .item--4:after, .js-digit--2 .item--5:before, .js-digit--2 .item--5:after, .js-digit--2 .item--7:before, .js-digit--2 .item--7:after {
-  border-color: olive;
-}
-
-.js-digit--3 .item--1, .js-digit--3 .item--3, .js-digit--3 .item--4, .js-digit--3 .item--6, .js-digit--3 .item--7 {
-  background: olive;
-}
-.js-digit--3 .item--1:before, .js-digit--3 .item--1:after, .js-digit--3 .item--3:before, .js-digit--3 .item--3:after, .js-digit--3 .item--4:before, .js-digit--3 .item--4:after, .js-digit--3 .item--6:before, .js-digit--3 .item--6:after, .js-digit--3 .item--7:before, .js-digit--3 .item--7:after {
-  border-color: olive;
+.js-color--crimson:before, .js-color--crimson:after {
+  border-color: crimson;
 }
 
-.js-digit--4 .item--2, .js-digit--4 .item--3, .js-digit--4 .item--4, .js-digit--4 .item--6 {
-  background: olive;
+.js-color--teal {
+  background: teal;
 }
-.js-digit--4 .item--2:before, .js-digit--4 .item--2:after, .js-digit--4 .item--3:before, .js-digit--4 .item--3:after, .js-digit--4 .item--4:before, .js-digit--4 .item--4:after, .js-digit--4 .item--6:before, .js-digit--4 .item--6:after {
-  border-color: olive;
-}
-
-.js-digit--5 .item--1, .js-digit--5 .item--2, .js-digit--5 .item--4, .js-digit--5 .item--6, .js-digit--5 .item--7 {
-  background: olive;
-}
-.js-digit--5 .item--1:before, .js-digit--5 .item--1:after, .js-digit--5 .item--2:before, .js-digit--5 .item--2:after, .js-digit--5 .item--4:before, .js-digit--5 .item--4:after, .js-digit--5 .item--6:before, .js-digit--5 .item--6:after, .js-digit--5 .item--7:before, .js-digit--5 .item--7:after {
-  border-color: olive;
-}
-
-.js-digit--6 .item--1, .js-digit--6 .item--2, .js-digit--6 .item--4, .js-digit--6 .item--5, .js-digit--6 .item--6, .js-digit--6 .item--7 {
-  background: olive;
-}
-.js-digit--6 .item--1:before, .js-digit--6 .item--1:after, .js-digit--6 .item--2:before, .js-digit--6 .item--2:after, .js-digit--6 .item--4:before, .js-digit--6 .item--4:after, .js-digit--6 .item--5:before, .js-digit--6 .item--5:after, .js-digit--6 .item--6:before, .js-digit--6 .item--6:after, .js-digit--6 .item--7:before, .js-digit--6 .item--7:after {
-  border-color: olive;
-}
-
-.js-digit--7 .item--1, .js-digit--7 .item--3, .js-digit--7 .item--6 {
-  background: olive;
-}
-.js-digit--7 .item--1:before, .js-digit--7 .item--1:after, .js-digit--7 .item--3:before, .js-digit--7 .item--3:after, .js-digit--7 .item--6:before, .js-digit--7 .item--6:after {
-  border-color: olive;
-}
-
-.js-digit--8 .item {
-  background: olive;
-}
-.js-digit--8 .item:before, .js-digit--8 .item:after {
-  border-color: olive;
-}
-
-.js-digit--9 .item {
-  background: olive;
-}
-.js-digit--9 .item:before, .js-digit--9 .item:after {
-  border-color: olive;
+.js-color--teal:before, .js-color--teal:after {
+  border-color: teal;
 }

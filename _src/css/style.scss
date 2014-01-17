@@ -1,7 +1,7 @@
 /* Mixins */
 
-$digit-width: 10em;
-$digit-height: 25em;
+$digit-width: 8em;
+$digit-height: 15em;
 
 $item-short: 2em;
 $item-long: $digit-width;
@@ -11,7 +11,7 @@ $item-margin: $item-short + $item-space;
 $item-margin-small: $item-margin / 2;
 
 $item-color-off: #1b1b1b;
-$item-color-on: olive;
+$item-color-on: teal;
 
 $trans-duration: .5s;
 
@@ -31,7 +31,7 @@ HTML, BODY {
 	}	
 BODY {
 	background: black;
-	font-family: "Arial Unicode MS";
+	font-family: Arial;
 	font-size: 8px;
 	}
 UL {
@@ -199,40 +199,15 @@ UL {
 					}
 	
 	@include digit-coloring ($item-color-off, "item");
-
+	
 .digit--sec {
 	vertical-align: text-bottom;
 	font-size: .5em;
 	}
 /* Digit Coloring
 ----------------------------------- */
-.js-digit--0 {	
-	@include digit-coloring ($item-color-on, "item--1, .item--2, .item--3, .item--5, .item--6, .item--7");
-	}		    
-.js-digit--1 {	
-	@include digit-coloring ($item-color-on, "item--3, .item--6");
-	} 	    
-.js-digit--2 {	
-	@include digit-coloring ($item-color-on, "item--1, .item--3, .item--4, .item--5, .item--7");
-	}
-.js-digit--3 {	
-	@include digit-coloring ($item-color-on, "item--1, .item--3, .item--4, .item--6, .item--7");
-	}	
-.js-digit--4 {	
-	@include digit-coloring ($item-color-on, "item--2, .item--3, .item--4, .item--6");
-	}
-.js-digit--5 {	
-	@include digit-coloring ($item-color-on, "item--1, .item--2, .item--4, .item--6, .item--7");
-	}
-.js-digit--6 {	
-	@include digit-coloring ($item-color-on, "item--1, .item--2, .item--4, .item--5, .item--6, .item--7");
-	}		
-.js-digit--7 {	
-	@include digit-coloring ($item-color-on, "item--1, .item--3, .item--6");
-	}	
-.js-digit--8 {	
-	@include digit-coloring ($item-color-on, "item");
-	}	
-.js-digit--9 {	
-	@include digit-coloring ($item-color-on, "item");
-	}	
+
+@include digit-coloring (orange, "js-color--orange");
+@include digit-coloring (crimson, "js-color--crimson");
+@include digit-coloring (teal, "js-color--teal");
+ 
