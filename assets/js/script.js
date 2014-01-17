@@ -12,20 +12,26 @@ var digits_map = [[".item--1", ".item--2", ".item--3", ".item--5", ".item--6", "
 	[".item--1", ".item--2", ".item--3", ".item--4", ".item--6", ".item--7"]
 	];
 
+var head = document.querySelector('head');
+head.insertAdjacentHTML('beforeend', '<style id="coloring"></style>');
+var style_container = document.getElementById("coloring");
+
 var color_step = 0;
-var color_period = 5;
+var color_steps_max = 60;
+var color_period = 1; // time out before changing color
 var color_time_counter = 0;
-var color_prefix = "js-color";
+var color_class = "js-color--active";
 
 var digits = document.querySelectorAll('.digit');
+var digit_item_class = ".digit__item";
+var digits_items = document.querySelectorAll(".digit__item");
 var dottes = document.querySelector(".dottes");
+var dottes_items = document.querySelectorAll(".dottes__item");
 
 setTime();
 var interval = setInterval(setTime,1000);	
 
-var colors = ["crimson", "orange", "gold", "yellowgreen", "steelblue", "purple"];
 
-var class_color = color_prefix + "--" + colors[colors.length - 1];
 
 function setTime() {
 
@@ -43,47 +49,50 @@ function setTime() {
 		var digit = digits[i];
 		var digit_value = +date_string.charAt(i);
 
-		// console.log	(i + ": -- DIGIT:" + digit_value);
-
-		remove_class_from_items (digit, color_prefix);
+		remove_class_from_items (digit, color_class);
+		remove_class_from_elem(dottes, color_class);
 
 		var digit_elems_classes = digits_map[digit_value];
 
 		if ( digit_elems_classes.length > 0 ){
 			for ( var l = 0; l < digit_elems_classes.length; l++ ){
 				var item = digit.querySelector(digit_elems_classes[l]);
-				item.classList.add( class_color );
+				item.classList.add( color_class  );
 				}
 		}	
 		
-		dottes.classList.add( class_color );
 	}
+
+	dottes.classList.add( color_class );
 
 	// Change colors
 	if ( color_time_counter == color_period ){
 		color_time_counter = 0;
-		change_color();
+		change_color_by_style();
 	}
 	else {
 		color_time_counter++;
 	}
 	
-	
+}
+
+function add_class_to_items ( elem ) {
+	var items = elem.querySelectorAll(".item");
+
+	for ( var i = 0; i < items.length; i++ ){
+		items[i].classList.add ( class_color );
+	}
 }
 
 function remove_class_from_items ( elem, class_prefix ) {
-	// console.log(elem);
 	var items = elem.querySelectorAll(".item");
 
 	for ( var i = 0; i < items.length; i++ ){
 		remove_class_from_elem(items[i], class_prefix);
 	}
-	// remove_class_from_elem(".dottes", class_prefix);
-
 }
 
 function remove_class_from_elem ( elem, class_prefix ) {
-	// console.log ("remove_class_from_elem");
 	var classes = elem.classList;
 			
 	for ( var k = 0; k < classes.length; k++ ){
@@ -93,12 +102,19 @@ function remove_class_from_elem ( elem, class_prefix ) {
 	}
 }
 
-function change_color(){
-	class_color = color_prefix + "--" + colors[color_step];
-	remove_class_from_elem ( dottes, color_prefix );
-	dottes.classList.add ( class_color );
+function change_color_by_style(){
 	
-	if ( color_step < colors.length - 1 ){
+	var hue_value = 360 / 60 * color_step;
+
+	var current_color = "hsl(" + hue_value + ", 70%, 50%)";
+	var color_class_local = "." + color_class;
+
+	var styles = color_class_local + " { background: " + current_color + "; }";
+		styles += color_class_local + ":before, " + color_class_local + ":after { border-color: " + current_color + "; }";
+
+	style_container.innerHTML = styles;
+
+	if ( color_step < color_steps_max ){
 		color_step++;
 	}
 	else {

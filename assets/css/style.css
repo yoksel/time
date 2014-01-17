@@ -42,6 +42,7 @@ LI {
 .dottes {
   display: inline-block;
   width: 2em;
+  background: transparent !important;
   vertical-align: middle;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -50,9 +51,8 @@ LI {
   content: "";
   display: block;
   width: 2em;
-  height: 2em;
-  background: #1b1b1b;
-  border-radius: .2em;
+  height: 0;
+  border-bottom: 2em solid #1b1b1b;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -73,12 +73,12 @@ LI {
   clear: both;
 }
 
-.item {
+.digit__item {
   position: relative;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.item:before, .item:after {
+.digit__item:before, .digit__item:after {
   content: "";
   display: block;
   position: absolute;
@@ -194,114 +194,7 @@ LI {
   border-color: #1b1b1b;
 }
 
-.item.dottes {
-  background: transparent;
-}
-.item.dottes:before, .item.dottes:after {
-  background: #1b1b1b;
-}
-
 .digit--sec {
   vertical-align: text-bottom;
   font-size: .5em;
-}
-
-/* Digit Coloring
------------------------------------ */
-.js-color--crimson {
-  background: crimson;
-}
-.js-color--crimson:before, .js-color--crimson:after {
-  border-color: crimson;
-}
-
-.js-color--crimson.dottes {
-  background: transparent;
-}
-.js-color--crimson.dottes:before, .js-color--crimson.dottes:after {
-  background: crimson;
-}
-
-.js-color--orange {
-  background: orange;
-}
-.js-color--orange:before, .js-color--orange:after {
-  border-color: orange;
-}
-
-.js-color--orange.dottes {
-  background: transparent;
-}
-.js-color--orange.dottes:before, .js-color--orange.dottes:after {
-  background: orange;
-}
-
-.js-color--gold {
-  background: gold;
-}
-.js-color--gold:before, .js-color--gold:after {
-  border-color: gold;
-}
-
-.js-color--gold.dottes {
-  background: transparent;
-}
-.js-color--gold.dottes:before, .js-color--gold.dottes:after {
-  background: gold;
-}
-
-.js-color--yellowgreen {
-  background: yellowgreen;
-}
-.js-color--yellowgreen:before, .js-color--yellowgreen:after {
-  border-color: yellowgreen;
-}
-
-.js-color--yellowgreen.dottes {
-  background: transparent;
-}
-.js-color--yellowgreen.dottes:before, .js-color--yellowgreen.dottes:after {
-  background: yellowgreen;
-}
-
-.js-color--steelblue {
-  background: steelblue;
-}
-.js-color--steelblue:before, .js-color--steelblue:after {
-  border-color: steelblue;
-}
-
-.js-color--steelblue.dottes {
-  background: transparent;
-}
-.js-color--steelblue.dottes:before, .js-color--steelblue.dottes:after {
-  background: steelblue;
-}
-
-.js-color--teal {
-  background: teal;
-}
-.js-color--teal:before, .js-color--teal:after {
-  border-color: teal;
-}
-
-.js-color--teal.dottes {
-  background: transparent;
-}
-.js-color--teal.dottes:before, .js-color--teal.dottes:after {
-  background: teal;
-}
-
-.js-color--purple {
-  background: purple;
-}
-.js-color--purple:before, .js-color--purple:after {
-  border-color: purple;
-}
-
-.js-color--purple.dottes {
-  background: transparent;
-}
-.js-color--purple.dottes:before, .js-color--purple.dottes:after {
-  background: purple;
 }

@@ -23,13 +23,6 @@ $trans-duration: .5s;
 		border-color: $color;
 		}
 	}
-	.#{$parent}.dottes {
-		background: transparent;
-		&:before,
-		&:after {
-			background: $color;
-			}
-		}				
 }
 
 /* Styles
@@ -70,6 +63,7 @@ UL {
 .dottes	{
 	display: inline-block;
 	width: $item-short;
+	background: transparent !important;
 	vertical-align: middle;
 	transition: $trans-duration;
 	&:before,
@@ -77,15 +71,16 @@ UL {
 		content: "";
 		display: block;
 		width: $item-short;
-		height: $item-short;
-		background: $item-color-off;
-        border-radius: .2em;
+		height: 0;
+		border-bottom: $item-short solid $item-color-off;
         transition: $trans-duration;
 		}
 		&:before {
-			margin-bottom: $item-short;	
-			}
+			margin-bottom: $item-short;
+		}
+		
 	}
+
 /* Digit
 ----------------------------------- */
 .digit {
@@ -97,7 +92,7 @@ UL {
 	.clear {
 		clear: both;
 		}
-	.item {
+	.digit__item {
 		position: relative;
 		transition: $trans-duration;
 		&:before,
@@ -214,14 +209,3 @@ UL {
 	vertical-align: text-bottom;
 	font-size: .5em;
 	}
-/* Digit Coloring
------------------------------------ */
-
-@include digit-coloring (crimson, "js-color--crimson");
-@include digit-coloring (orange, "js-color--orange");
-@include digit-coloring (gold, "js-color--gold");
-@include digit-coloring (yellowgreen, "js-color--yellowgreen");
-@include digit-coloring (steelblue, "js-color--steelblue");
-@include digit-coloring (teal, "js-color--teal");
-@include digit-coloring (purple, "js-color--purple");
- 
