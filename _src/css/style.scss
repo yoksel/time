@@ -1,7 +1,7 @@
 /* Mixins */
 
-$digit-width: 8em;
-$digit-height: 15em;
+$digit-width: 10em;
+$digit-height: $digit-width * 2;
 
 $item-short: 2em;
 $item-long: $digit-width;
@@ -11,19 +11,27 @@ $item-margin: $item-short + $item-space;
 $item-margin-small: $item-margin / 2;
 
 $item-color-off: #1b1b1b;
-$item-color-on: teal;
+$item-color-on: orange;
 
 $trans-duration: .5s;
 
-@mixin digit-coloring ($color, $parents) {
-.#{$parents} {
+@mixin digit-coloring ($color, $parent) {
+.#{$parent} {
 	background: $color;
 	&:before,
 	&:after {
 		border-color: $color;
 		}
-	}			
+	}
+	.#{$parent}.dottes {
+		background: transparent;
+		&:before,
+		&:after {
+			background: $color;
+			}
+		}				
 }
+
 /* Styles
 ----------------------------------- */
 HTML, BODY {
@@ -63,14 +71,16 @@ UL {
 	display: inline-block;
 	width: $item-short;
 	vertical-align: middle;
+	transition: $trans-duration;
 	&:before,
 	&:after {
 		content: "";
 		display: block;
 		width: $item-short;
 		height: $item-short;
-		background: $item-color-on;
+		background: $item-color-off;
         border-radius: .2em;
+        transition: $trans-duration;
 		}
 		&:before {
 			margin-bottom: $item-short;	
@@ -207,7 +217,11 @@ UL {
 /* Digit Coloring
 ----------------------------------- */
 
-@include digit-coloring (orange, "js-color--orange");
 @include digit-coloring (crimson, "js-color--crimson");
+@include digit-coloring (orange, "js-color--orange");
+@include digit-coloring (gold, "js-color--gold");
+@include digit-coloring (yellowgreen, "js-color--yellowgreen");
+@include digit-coloring (steelblue, "js-color--steelblue");
 @include digit-coloring (teal, "js-color--teal");
+@include digit-coloring (purple, "js-color--purple");
  
