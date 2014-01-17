@@ -8,7 +8,7 @@ var digits_map = [
 	[".item--1", ".item--2", ".item--4", ".item--6", ".item--7"],
 	[".item--1", ".item--2", ".item--4", ".item--5", ".item--6", ".item--7"],
 	[".item--1", ".item--3", ".item--6"],
-	["item"],
+	[".item--1", ".item--2", ".item--3", ".item--4", ".item--5", ".item--6", ".item--7"],
 	[".item--1", ".item--2", ".item--3", ".item--4", ".item--6", ".item--7"]
 	];
 
@@ -34,18 +34,20 @@ function setTime() {
 		var digit_value = +date_string.charAt(i);
 
 		if ( digit_value != prev ){
+			console.log ("-- Digit: " + digit_value);
 
-			var digit_elems_classes = digits_map[i];
+			var digit_elems_classes = digits_map[digit_value];
 
-			// console.log ("-- Digit: " + digit_value);
-			// console.log(digit_elems_classes);
+			console.log(digit_elems_classes);
 
-			for ( var l = 0; l < digit_elems_classes.length; l++ ){
-				var item = digit.querySelector(digit_elems_classes[l]);
-				// console.log ( item );
-				remove_class_from_list (item, "js-color");
-				item.classList.add( class_color );
-				}
+			if ( digit_elems_classes.length > 0 ){
+				for ( var l = 0; l < digit_elems_classes.length; l++ ){
+					var item = digit.querySelector(digit_elems_classes[l]);
+					console.log ( item );
+					remove_class_from_list (item, "js-color");
+					item.classList.add( class_color );
+					}
+			}		
 
 			// remove_class_from_list (digit, "js-digit");
 		
