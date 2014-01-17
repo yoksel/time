@@ -17,7 +17,7 @@ head.insertAdjacentHTML('beforeend', '<style id="coloring"></style>');
 var style_container = document.getElementById("coloring");
 
 var color_step = 0;
-var color_steps_max = 60;
+var color_steps_max = 120;
 var color_period = 1; // time out before changing color
 var color_time_counter = 0;
 var color_class = "js-color--active";
@@ -104,7 +104,7 @@ function remove_class_from_elem ( elem, class_prefix ) {
 
 function change_color_by_style(){
 	
-	var hue_value = 360 / 60 * color_step;
+	var hue_value = 360 / color_steps_max * color_step;
 
 	var current_color = "hsl(" + hue_value + ", 70%, 50%)";
 	var color_class_local = "." + color_class;

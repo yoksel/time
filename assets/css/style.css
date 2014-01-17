@@ -8,7 +8,7 @@ HTML, BODY {
 BODY {
   background: black;
   font-family: Arial;
-  font-size: 8px;
+  /*font-size: 10px;*/
 }
 
 UL {
@@ -22,17 +22,17 @@ LI {
 
 .wrapper {
   position: absolute;
-  top: -10em;
-  bottom: -10em;
+  top: -6em;
+  bottom: -6em;
   margin: auto;
   width: 100%;
-  height: 20em;
+  height: 12em;
   text-align: center;
 }
 .wrapper:before {
   content: "";
   display: inline-block;
-  height: 20em;
+  height: 12em;
   width: 20px;
   vertical-align: middle;
 }
@@ -41,7 +41,8 @@ LI {
 ----------------------------------- */
 .dottes {
   display: inline-block;
-  width: 2em;
+  width: 1em;
+  margin: 0 1em;
   background: transparent !important;
   vertical-align: middle;
   -webkit-transition: 0.5s;
@@ -50,9 +51,9 @@ LI {
 .dottes:before, .dottes:after {
   content: "";
   display: block;
-  width: 2em;
+  width: 1em;
   height: 0;
-  border-bottom: 2em solid #1b1b1b;
+  border-bottom: 1em solid #1b1b1b;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -64,7 +65,7 @@ LI {
 ----------------------------------- */
 .digit {
   display: inline-block;
-  width: 10em;
+  width: 6em;
   margin: 0 1em;
   vertical-align: middle;
 }
@@ -84,15 +85,15 @@ LI {
   position: absolute;
   width: 0;
   height: 0;
-  border: 1em solid transparent;
+  border: 0.5em solid transparent;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .item--h {
   clear: both;
-  width: 5em;
-  height: 2em;
+  width: 3.4em;
+  height: 1em;
   margin: 0 auto;
 }
 
@@ -100,26 +101,26 @@ LI {
   border-bottom-color: transparent !important;
 }
 .item--1:before {
-  left: -2em;
+  left: -1em;
   border-left-color: transparent !important;
 }
 .item--1:after {
-  right: -2em;
+  right: -1em;
   border-right-color: transparent !important;
 }
 
 .item--4 {
-  width: 5em;
-  margin: 6em auto 0;
+  width: 3.4em;
+  margin: 4em auto 0;
 }
 .item--4:before {
-  left: -1em;
+  left: -0.5em;
   border-left: 0;
   border-top-color: transparent !important;
   border-bottom-color: transparent !important;
 }
 .item--4:after {
-  right: -1em;
+  right: -0.5em;
   border-right: 0;
   border-top-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -129,25 +130,25 @@ LI {
   border-top-color: transparent !important;
 }
 .item--7:before {
-  left: -2em;
+  left: -1em;
   border-left-color: transparent !important;
 }
 .item--7:after {
-  right: -2em;
+  right: -1em;
   border-right-color: transparent !important;
 }
 
 .item--v {
   float: left;
-  width: 2em;
-  height: 5em;
-  margin: 0.5em 0;
+  width: 1em;
+  height: 3.4em;
+  margin: 0.3em 0;
 }
 .item--v:before {
-  top: -2em;
+  top: -1em;
 }
 .item--v:after {
-  bottom: -2em;
+  bottom: -1em;
 }
 
 .item--3,

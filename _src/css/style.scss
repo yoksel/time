@@ -1,11 +1,11 @@
 /* Mixins */
 
-$digit-width: 10em;
+$digit-width: 6em;
 $digit-height: $digit-width * 2;
 
-$item-short: 2em;
+$item-short: 1em;
 $item-long: $digit-width;
-$item-space: .5em;
+$item-space: .3em;
 $item-body: $item-long - $item-short * 2 - $item-space * 2;
 $item-margin: $item-short + $item-space;
 $item-margin-small: $item-margin / 2;
@@ -33,7 +33,7 @@ HTML, BODY {
 BODY {
 	background: black;
 	font-family: Arial;
-	font-size: 8px;
+	/*font-size: 10px;*/
 	}
 UL {
 	padding: 0;
@@ -63,6 +63,7 @@ UL {
 .dottes	{
 	display: inline-block;
 	width: $item-short;
+	margin: 0 $item-short;
 	background: transparent !important;
 	vertical-align: middle;
 	transition: $trans-duration;
@@ -76,7 +77,7 @@ UL {
         transition: $trans-duration;
 		}
 		&:before {
-			margin-bottom: $item-short;
+			margin-bottom: $item-short * 2;
 		}
 		
 	}
