@@ -1,49 +1,38 @@
 /* Mixins */
 
-$item-short: 1em;
-$item-long: 10em;
-$item-space: .2em;
+$digit-width: 10em;
+$digit-height: 25em;
+
+$item-short: 2em;
+$item-long: $digit-width;
+$item-space: .5em;
 $item-body: $item-long - $item-short * 2 - $item-space * 2;
 $item-margin: $item-short + $item-space;
 $item-margin-small: $item-margin / 2;
 
-$item-color-off: #222;
-$item-color-on: crimson;
+$item-color-off: #1b1b1b;
+$item-color-on: olive;
 
-$item: item--1;
+$trans-duration: .5s;
 
-@mixin digit-coloring ($color, $parent, $dir) {
-	.#{$parent} {
-		background: $color;
-		@if $dir == h {
-			&:before,
-			&:after {
-				border-color: transparent $color;
-				}
-		} 
-		@else if $dir == v {
-			&:before,
-			&:after {
-				border-color: $color transparent;
-				}
+@mixin digit-coloring ($color, $parents) {
+.#{$parents} {
+	background: $color;
+	&:before,
+	&:after {
+		border-color: $color;
 		}
-	}	
-	@if $dir == both {
-			.item--h:before,
-			.item--h:after {
-				border-color: transparent $color;
-				}
-			.item--v:before,
-			.item--v:after {
-				border-color: $color transparent;
-				}
-		}
+	}			
 }
-
+/* Styles
+----------------------------------- */
+HTML, BODY {
+	height: 100%;
+	}	
 BODY {
 	background: black;
 	font-family: "Arial Unicode MS";
-	font-size: 70%;
+	font-size: 8px;
 	}
 UL {
 	padding: 0;
@@ -53,18 +42,54 @@ UL {
 		list-style: none ;
 		}
 .wrapper {
-	/*border: 1px solid silver;*/
+	position: absolute;
+	top: -$digit-height / 2;
+	bottom: -$digit-height / 2;
+	margin: auto;
+	width: 100%;
+	height: $digit-height;
+	text-align: center;
+	&:before {
+		content: "";
+		display: inline-block;
+		height: $digit-height;
+		width: 20px;
+		vertical-align: middle;
+		}
 	}	
+/* Dottes
+----------------------------------- */
+.dottes	{
+	display: inline-block;
+	width: $item-short;
+	vertical-align: middle;
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		width: $item-short;
+		height: $item-short;
+		background: $item-color-on;
+        border-radius: .2em;
+		}
+		&:before {
+			margin-bottom: $item-short;	
+			}
+	}
 /* Digit
 ----------------------------------- */
 .digit {
 	display: inline-block;
-	width: 10em;
-	height: 20em;
-	border: 1px solid;
+	width: $digit-width;
+	margin: 0 1em;
+	vertical-align: middle;
 	}	
+	.clear {
+		clear: both;
+		}
 	.item {
 		position: relative;
+		transition: $trans-duration;
 		&:before,
 		&:after {
 			content: "";
@@ -72,48 +97,142 @@ UL {
 			position: absolute;
 			width: 0;
 			height: 0;
-			border: .5em solid transparent;
+			border: $item-short / 2 solid transparent;
+			transition: $trans-duration;
 			}
 		}
 		.item--h {
 			clear: both;
 			width: $item-body;
 			height: $item-short;
-			margin: 0 $item-margin;
+			margin: 0 auto;
+			}
+		.item--1 {	
+			&:before,
+			&:after {
+				border-bottom-color: transparent !important;
+				} 
 			&:before {
-				left: -.5em;
-				border-left: 0;
+				left: -$item-short;
+				border-left-color: transparent !important;
 				}
 			&:after {
-				right: -.5em;
-				border-right: 0;
+				right: -$item-short;
+				border-right-color: transparent !important;
 				}	
 			}	
+		.item--4 {
+			width: $item-body;
+			margin: $item-body + $item-space * 2 auto 0;
+			&:before {
+				left: -$item-short / 2;
+				border-left: 0;
+				border-top-color: transparent !important;
+				border-bottom-color: transparent !important;
+				}
+			&:after {
+				right: -$item-short / 2;
+				border-right: 0;
+				border-top-color: transparent !important;
+				border-bottom-color: transparent !important;
+				}	
+			}	
+		.item--7 {	
+			&:before,
+			&:after {
+				border-top-color: transparent !important;
+				}
+			&:before {
+				left: -$item-short;
+				border-left-color: transparent !important;
+				}
+			&:after {
+				right: -$item-short;
+				border-right-color: transparent !important;
+				}	
+			}			
 		.item--v {
 			float: left;
 			width: $item-short;
 			height: $item-body;
 			margin: $item-space 0;
 			&:before {
-				top: -.5em;
-				border-top: 0;
+				top: -$item-short;
 				}
 			&:after {
-				bottom: -.5em;
-				border-bottom: 0;
+				bottom: -$item-short;
 				}
 			}
-			.item--2,
+			.item--3,
 			.item--6 {
 				float: right;
+				}	
+			.item--2,
+			.item--5 {
+				&:before {
+					border-top-color: transparent !important;
+					border-right-color: transparent !important;
+					}
+				&:after {
+					border-bottom-color: transparent !important;
+					border-right-color: transparent !important;
+					}
 				}
-	@include digit-coloring ($item-color-off, item, both);	
-					
+			.item--3,
+			.item--6 {
+				&:before {
+					border-top-color: transparent !important;
+					border-left-color: transparent !important;
+					}
+				&:after {
+					border-bottom-color: transparent !important;
+					border-left-color: transparent !important;
+					}
+				}
+			.item--2:after,
+			.item--5:before {
+					border-left-color: transparent !important;
+					}
+			.item--3:after,
+			.item--6:before {
+					border-right-color: transparent !important;
+					}
+	
+	@include digit-coloring ($item-color-off, "item");
+
+.digit--sec {
+	vertical-align: text-bottom;
+	font-size: .5em;
+	}
 /* Digit Coloring
 ----------------------------------- */
-.digit--1 {
-	@include digit-coloring ($item-color-on, item--1, h);	
-	@include digit-coloring ($item-color-on, item--2, v);	
-}
-
-
+.js-digit--0 {	
+	@include digit-coloring ($item-color-on, "item--1, .item--2, .item--3, .item--5, .item--6, .item--7");
+	}		    
+.js-digit--1 {	
+	@include digit-coloring ($item-color-on, "item--3, .item--6");
+	} 	    
+.js-digit--2 {	
+	@include digit-coloring ($item-color-on, "item--1, .item--3, .item--4, .item--5, .item--7");
+	}
+.js-digit--3 {	
+	@include digit-coloring ($item-color-on, "item--1, .item--3, .item--4, .item--6, .item--7");
+	}	
+.js-digit--4 {	
+	@include digit-coloring ($item-color-on, "item--2, .item--3, .item--4, .item--6");
+	}
+.js-digit--5 {	
+	@include digit-coloring ($item-color-on, "item--1, .item--2, .item--4, .item--6, .item--7");
+	}
+.js-digit--6 {	
+	@include digit-coloring ($item-color-on, "item--1, .item--2, .item--4, .item--5, .item--6, .item--7");
+	}		
+.js-digit--7 {	
+	@include digit-coloring ($item-color-on, "item--1, .item--3, .item--6");
+	}	
+.js-digit--8 {	
+	@include digit-coloring ($item-color-on, "item");
+	}	
+.js-digit--9 {	
+	@include digit-coloring ($item-color-on, "item");
+	}	
