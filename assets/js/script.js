@@ -1,5 +1,3 @@
-// console.log("Hello");
-
 var digits_map = [[".item--1", ".item--2", ".item--3", ".item--5", ".item--6", ".item--7"],
 	[".item--3", ".item--6"],
 	[".item--1", ".item--3", ".item--4", ".item--5", ".item--7"],
@@ -17,7 +15,7 @@ head.insertAdjacentHTML('beforeend', '<style id="coloring"></style>');
 var style_container = document.getElementById("coloring");
 
 var color_step = 0;
-var color_steps_max = 120;
+var color_steps_max = 12;
 var color_period = 1; // time out before changing color
 var color_time_counter = 0;
 var color_class = "js-color--active";
@@ -31,8 +29,6 @@ var dottes_items = document.querySelectorAll(".dottes__item");
 setTime();
 var interval = setInterval(setTime,1000);	
 
-
-
 function setTime() {
 
 	// Get Date 
@@ -43,7 +39,6 @@ function setTime() {
 	var date_string = hour + "" + min + "" + sec;
 
 	// Change Time
-	
 	for ( var i = 0; i < digits.length; i++ ) {
 		
 		var digit = digits[i];
@@ -103,10 +98,11 @@ function remove_class_from_elem ( elem, class_prefix ) {
 }
 
 function change_color_by_style(){
-	
-	var hue_value = 360 / color_steps_max * color_step;
 
-	var current_color = "hsl(" + hue_value + ", 70%, 50%)";
+	var hue_value = 360 / color_steps_max * color_step;
+	var bright_value = 50; 
+	
+	var current_color = "hsl(" + hue_value + ", 70%, " + bright_value + "%)";
 	var color_class_local = "." + color_class;
 
 	var styles = color_class_local + " { background: " + current_color + "; }";

@@ -8,7 +8,17 @@ HTML, BODY {
 BODY {
   background: black;
   font-family: Arial;
-  /*font-size: 10px;*/
+  font-size: 16px;
+}
+@media (max-width: 700px), (max-height: 350px) {
+  BODY {
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px), (max-height: 250px) {
+  BODY {
+    font-size: 8px;
+  }
 }
 
 UL {
@@ -27,6 +37,7 @@ LI {
   margin: auto;
   width: 100%;
   height: 12em;
+  white-space: nowrap;
   text-align: center;
 }
 .wrapper:before {
@@ -53,9 +64,9 @@ LI {
   display: block;
   width: 1em;
   height: 0;
-  border-bottom: 1em solid #1b1b1b;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  border-bottom: 1em solid #151515;
+  -webkit-transition: border-color 0.5s;
+  transition: border-color 0.5s;
 }
 .dottes:before {
   margin-bottom: 2em;
@@ -76,8 +87,8 @@ LI {
 
 .digit__item {
   position: relative;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
 }
 .digit__item:before, .digit__item:after {
   content: "";
@@ -86,8 +97,8 @@ LI {
   width: 0;
   height: 0;
   border: 0.5em solid transparent;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: border-color 0.5s;
+  transition: border-color 0.5s;
 }
 
 .item--h {
@@ -189,13 +200,18 @@ LI {
 }
 
 .item {
-  background: #1b1b1b;
+  background: #151515;
 }
 .item:before, .item:after {
-  border-color: #1b1b1b;
+  border-color: #151515;
 }
 
 .digit--sec {
   vertical-align: text-bottom;
   font-size: .5em;
+}
+@media (max-width: 600px) {
+  .digit--sec {
+    display: none;
+  }
 }
