@@ -10,8 +10,7 @@ $item-body: $item-long - $item-short * 2 - $item-space * 2;
 $item-margin: $item-short + $item-space;
 $item-margin-small: $item-margin / 2;
 
-$item-color-off: #1b1b1b;
-$item-color-on: orange;
+$item-color-off: #151515;
 
 $trans-duration: .5s;
 
@@ -31,9 +30,17 @@ HTML, BODY {
 	height: 100%;
 	}	
 BODY {
+	margin: 0;
+	padding: 0;
 	background: black;
 	font-family: Arial;
-	/*font-size: 10px;*/
+	font-size: 16px;
+	@media (max-width: 700px), (max-height: 350px) { 
+		font-size: 12px;
+		}
+	@media (max-width: 600px ), (max-height: 250px){
+		font-size: 8px;
+		}
 	}
 UL {
 	padding: 0;
@@ -49,6 +56,7 @@ UL {
 	margin: auto;
 	width: 100%;
 	height: $digit-height;
+	white-space: nowrap;
 	text-align: center;
 	&:before {
 		content: "";
@@ -74,7 +82,7 @@ UL {
 		width: $item-short;
 		height: 0;
 		border-bottom: $item-short solid $item-color-off;
-        transition: $trans-duration;
+        transition: border-color $trans-duration;
 		}
 		&:before {
 			margin-bottom: $item-short * 2;
@@ -95,7 +103,7 @@ UL {
 		}
 	.digit__item {
 		position: relative;
-		transition: $trans-duration;
+		transition: background $trans-duration;
 		&:before,
 		&:after {
 			content: "";
@@ -104,7 +112,7 @@ UL {
 			width: 0;
 			height: 0;
 			border: $item-short / 2 solid transparent;
-			transition: $trans-duration;
+			transition: border-color $trans-duration;
 			}
 		}
 		.item--h {
@@ -209,4 +217,7 @@ UL {
 .digit--sec {
 	vertical-align: text-bottom;
 	font-size: .5em;
+	@media (max-width: 600px ){
+		display: none;
+		}
 	}
