@@ -28,14 +28,14 @@ $trans-duration: .5s;
 ----------------------------------- */
 HTML, BODY {
 	height: 100%;
-	}	
+	}
 BODY {
 	margin: 0;
 	padding: 0;
 	background: black;
 	font-family: Arial;
 	font-size: 16px;
-	@media (max-width: 700px), (max-height: 350px) { 
+	@media (max-width: 700px), (max-height: 350px) {
 		font-size: 12px;
 		}
 	@media (max-width: 600px ), (max-height: 250px){
@@ -51,8 +51,8 @@ UL {
 		}
 .wrapper {
 	position: absolute;
-	top: -$digit-height / 2;
-	bottom: -$digit-height / 2;
+	top: 0;
+	bottom: 0;
 	margin: auto;
 	width: 100%;
 	height: $digit-height;
@@ -65,7 +65,7 @@ UL {
 		width: 20px;
 		vertical-align: middle;
 		}
-	}	
+	}
 /* Dottes
 ----------------------------------- */
 .dottes	{
@@ -87,7 +87,7 @@ UL {
 		&:before {
 			margin-bottom: $item-short * 2;
 		}
-		
+
 	}
 
 /* Digit
@@ -97,7 +97,7 @@ UL {
 	width: $digit-width;
 	margin: 0 1em;
 	vertical-align: middle;
-	}	
+	}
 	.clear {
 		clear: both;
 		}
@@ -121,11 +121,11 @@ UL {
 			height: $item-short;
 			margin: 0 auto;
 			}
-		.item--1 {	
+		.item--1 {
 			&:before,
 			&:after {
 				border-bottom-color: transparent !important;
-				} 
+				}
 			&:before {
 				left: -$item-short;
 				border-left-color: transparent !important;
@@ -133,8 +133,8 @@ UL {
 			&:after {
 				right: -$item-short;
 				border-right-color: transparent !important;
-				}	
-			}	
+				}
+			}
 		.item--4 {
 			width: $item-body;
 			margin: $item-body + $item-space * 2 auto 0;
@@ -149,9 +149,9 @@ UL {
 				border-right: 0;
 				border-top-color: transparent !important;
 				border-bottom-color: transparent !important;
-				}	
-			}	
-		.item--7 {	
+				}
+			}
+		.item--7 {
 			&:before,
 			&:after {
 				border-top-color: transparent !important;
@@ -163,8 +163,8 @@ UL {
 			&:after {
 				right: -$item-short;
 				border-right-color: transparent !important;
-				}	
-			}			
+				}
+			}
 		.item--v {
 			float: left;
 			width: $item-short;
@@ -180,7 +180,7 @@ UL {
 			.item--3,
 			.item--6 {
 				float: right;
-				}	
+				}
 			.item--2,
 			.item--5 {
 				&:before {
@@ -211,9 +211,9 @@ UL {
 			.item--6:before {
 					border-right-color: transparent !important;
 					}
-	
+
 	@include digit-coloring ($item-color-off, "item");
-	
+
 .digit--sec {
 	vertical-align: text-bottom;
 	font-size: .5em;
