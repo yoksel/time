@@ -4,7 +4,7 @@
   "description": "Funny watches with Css and Js",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "grunt"
   },
   "author": "yoksel",
   "license": "BSD-2-Clause",
