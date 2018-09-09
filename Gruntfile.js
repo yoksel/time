@@ -100,13 +100,9 @@ module.exports = function (grunt) {
         '_src/css/style.unprefixed.css'
       ],
       build: [
-        '_site/Gemfile',
-        '_site/Gemfile.lock',
-        '_site/Gruntfile.js',
-        '_site/package.json',
-        '_site/node_modules',
-        '_src/css/style.prefixed.css',
-        '_src/css/style.unprefixed.css'
+        'Gruntfile.js',
+        'package.json',
+        '_src'
       ]
     },
 
@@ -133,13 +129,8 @@ module.exports = function (grunt) {
     },
     open : {
       dev : {
-        path: 'http://localhost:9001/',
-        // app: 'Firefox'
-      },
-      // file : {
-      //   path : '/etc/hosts',
-      //   app: 'Sublime Text 2'
-      // }
+        path: 'http://localhost:9001/'
+      }
     }
   });
 
