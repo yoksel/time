@@ -4,20 +4,24 @@
   "description": "Funny watches with Css and Js",
   "main": "index.html",
   "scripts": {
-    "start": "grunt"
+    "start": "gulp serve",
+    "build": "gulp clean && gulp sass && gulp copy",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "author": "yoksel",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-sass": "~0.6.0",
-    "grunt-autoprefixer": "~0.6.4",
-    "grunt-csso": "~0.5.3",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-connect": "~0.6.0"
-  },
-  "dependencies": {
-    "grunt-open": "^0.2.4"
+    "autoprefixer": "^6.3.5",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "colors": "^1.1.2",
+    "del": "^2.2.0",
+    "gh-pages": "^2.2.0",
+    "gulp": "^4.0.0",
+    "gulp-copy": "0.0.2",
+    "gulp-include": "^2.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2"
   }
 }
